@@ -1,0 +1,229 @@
+/* ---------- Nav ---------- */
+
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  background: transparent;
+  transition: background 0.4s var(--ease-out), border-color 0.4s var(--ease-out);
+  border-bottom: 1px solid transparent;
+}
+
+.site-nav.is-scrolled {
+  background: rgba(12, 12, 14, 0.82);
+  backdrop-filter: blur(10px);
+  border-bottom-color: var(--color-border);
+}
+
+.site-nav__inner {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  /* left inset is intentionally smaller than the standard --container-pad —
+     matches the home hero wordmark's own left edge (see home.css) so nav
+     content and the wordmark share one clean left margin */
+  padding: 0 var(--container-pad) 0 var(--nav-left-inset);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.site-nav__left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Homepage carries the giant hero wordmark as the brand mark, so the small
+   corner logo is redundant there — the nav links then start flush at the
+   left page margin instead of trailing a logo. */
+body.page-home .site-nav__logo {
+  display: none;
+}
+
+.site-nav__logo {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.site-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.site-nav__links a {
+  position: relative;
+  padding: 4px 0;
+  color: var(--color-text-muted);
+  transition: color 0.25s var(--ease-out);
+}
+
+.site-nav__links a:hover {
+  color: var(--color-text);
+}
+
+.site-nav__meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 13px;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  gap: 4px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.lang-toggle span {
+  transition: color 0.25s var(--ease-out);
+}
+
+.lang-toggle span.is-active {
+  color: var(--color-text);
+}
+
+.hel-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.hel-time__label {
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-light);
+}
+
+.site-nav__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+}
+
+.site-nav__burger span {
+  display: block;
+  height: 1px;
+  background: var(--color-text);
+  transition: transform 0.3s var(--ease-out), opacity 0.3s var(--ease-out);
+}
+
+@media (max-width: 860px) {
+  .site-nav__links,
+  .site-nav__meta {
+    display: none;
+  }
+
+  .site-nav__burger {
+    display: flex;
+  }
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.site-footer__marquee {
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+.marquee-track span {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 56px);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  padding-right: 40px;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.site-footer__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 64px var(--container-pad) 40px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 32px;
+}
+
+.site-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.site-footer__logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.site-footer__heading {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.site-footer__col a {
+  color: var(--color-text-muted);
+  transition: color 0.25s var(--ease-out);
+}
+
+.site-footer__col a:hover {
+  color: var(--color-text);
+}
+
+.site-footer__bottom {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 20px var(--container-pad) 32px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border);
+}
+
+@media (max-width: 700px) {
+  .site-footer__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}

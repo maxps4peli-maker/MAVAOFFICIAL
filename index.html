@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAVA — Helsinki Web Design Studio</title>
+  <meta name="description" content="MAVA is a Helsinki-based web design studio building websites and online stores.">
+  <link rel="icon" href="data:,">
+
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body class="page-home">
+  <div data-include="partials/nav.html"></div>
+
+  <main>
+    <section class="hero" data-hero>
+      <div class="hero__inner">
+        <div class="hero__left">
+          <div class="hero__left-top">
+            <h1 class="hero__wordmark"><a href="/" aria-label="MAVA — Home">MAVA</a></h1>
+            <p class="hero__tagline" data-i18n="home.hero.tagline">Web Design Studio — Helsinki</p>
+          </div>
+          <p class="hero__intro" data-i18n="home.hero.intro">An independent Helsinki web design studio. We design and build websites and online stores — focused on quality, fast delivery and flexible pricing.</p>
+        </div>
+
+        <div class="hero__right">
+          <div class="hero__index" id="hero-index" aria-hidden="true">01 / 03</div>
+
+          <div class="hero__media-stack">
+            <article class="hero__project is-active" data-project-index="0">
+              <div class="hero__media">
+                <!-- Real media in place for project 01. Projects 02/03 still need their own real media — see their own TODO comments below. -->
+                <span class="hero__media-tag" data-i18n="home.hero.projects.0.tag">Jensai Skin & Wellness</span>
+                <div class="hero-shot">
+                  <img class="hero-shot__img" src="assets/images/jensai-home.png" alt="Jensai Skin & Wellness website" loading="eager">
+                </div>
+                <a class="hero__view-work" href="https://jensai.fi" target="_blank" rel="noopener" aria-label="View the Jensai Skin & Wellness project">
+                  <span data-i18n="home.hero.viewWork">View Work</span>
+                </a>
+              </div>
+              <div class="hero__project-meta">
+                <h3 class="hero__project-name" data-i18n="home.hero.projects.0.name">Jensai Skin & Wellness</h3>
+                <p class="hero__project-desc" data-i18n="home.hero.projects.0.descriptor">Website design & development for a premium skincare & beauty salon in Espoo.</p>
+              </div>
+            </article>
+
+            <article class="hero__project" data-project-index="1">
+              <div class="hero__media hero__media--soon">
+                <!-- TODO: replace with real media once this project goes public -->
+                <span class="hero__media-tag" data-i18n="home.hero.projects.1.tag">Coming soon</span>
+                <span class="hero__view-work is-disabled" aria-disabled="true">
+                  <span data-i18n="home.hero.comingSoon">Coming soon</span>
+                </span>
+              </div>
+              <div class="hero__project-meta">
+                <h3 class="hero__project-name" data-i18n="home.hero.projects.1.name">Coming soon</h3>
+                <p class="hero__project-desc" data-i18n="home.hero.projects.1.descriptor">A new MAVA project is currently in development.</p>
+              </div>
+            </article>
+
+            <article class="hero__project" data-project-index="2">
+              <div class="hero__media hero__media--soon">
+                <!-- TODO: replace with real media once this project goes public -->
+                <span class="hero__media-tag" data-i18n="home.hero.projects.2.tag">Coming soon</span>
+                <span class="hero__view-work is-disabled" aria-disabled="true">
+                  <span data-i18n="home.hero.comingSoon">Coming soon</span>
+                </span>
+              </div>
+              <div class="hero__project-meta">
+                <h3 class="hero__project-name" data-i18n="home.hero.projects.2.name">Coming soon</h3>
+                <p class="hero__project-desc" data-i18n="home.hero.projects.2.descriptor">A new MAVA project is currently in development.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+
+  <script src="assets/js/include-partials.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/time-widget.js"></script>
+  <script src="assets/js/lang-toggle.js"></script>
+  <script src="assets/js/lenis-init.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/hero.js"></script>
+  <script src="assets/js/hero-shot.js"></script>
+</body>
+</html>

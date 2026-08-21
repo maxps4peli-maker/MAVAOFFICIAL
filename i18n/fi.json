@@ -1,0 +1,158 @@
+{
+  "nav": {
+    "home": "Etusivu",
+    "work": "Työt",
+    "studio": "Studio",
+    "contact": "Yhteystiedot"
+  },
+  "footer": {
+    "tagline": "Verkkosivustudio, Helsinki.",
+    "marquee": "Rakennetaan jotain yhdessä —",
+    "contactHeading": "Yhteystiedot",
+    "followHeading": "Seuraa",
+    "navHeading": "Valikko",
+    "location": "Helsinki, Suomi",
+    "email": "mavastudiosinfo@gmail.com",
+    "phone": "+358 44 263 1350"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Verkkosivustudio — Helsinki",
+      "intro": "Itsenäinen helsinkiläinen verkkosivustudio. Suunnittelemme ja rakennamme verkkosivuja ja verkkokauppoja — keskittyen laatuun, nopeaan toimitukseen ja joustavaan hinnoitteluun.",
+      "viewWork": "Katso työ",
+      "comingSoon": "Tulossa pian",
+      "projects": [
+        {
+          "tag": "Jensai Skin & Wellness",
+          "name": "Jensai Skin & Wellness",
+          "descriptor": "Verkkosivujen suunnittelu ja toteutus premium-tason ihonhoito- ja kauneussalongille Espoossa."
+        },
+        {
+          "tag": "Tulossa pian",
+          "name": "Tulossa pian",
+          "descriptor": "Uusi MAVA-projekti on tällä hetkellä työn alla."
+        },
+        {
+          "tag": "Tulossa pian",
+          "name": "Tulossa pian",
+          "descriptor": "Uusi MAVA-projekti on tällä hetkellä työn alla."
+        }
+      ]
+    }
+  },
+  "pages": {
+    "work": {
+      "eyebrow": "Valitut työt",
+      "title": "Työt",
+      "body": "Projektilista tulossa pian."
+    },
+    "studio": {
+      "labels": {
+        "opening": "01 / Studio",
+        "approach": "02 / Lähestymistapa",
+        "founders": "04 / Perustajat",
+        "services": "03 / Palvelut",
+        "process": "05 — Prosessi",
+        "values": "06 — Arvot",
+        "cta": "07 — Ota yhteyttä"
+      },
+      "statement": "Me olemme MAVA. Itsenäinen helsinkiläinen verkkosivustudio, joka suunnittelee ja rakentaa verkkosivuja ja verkkokauppoja, jotka erottuvat joukosta.",
+      "approach": {
+        "p1": "MAVA on tarkoituksella pieni. Jokainen projekti kulkee suoraan meidän kahden kautta — ei asiakkuuspäälliköitä, ei välikäsiä, ei etäisyyttä sinun ja sivustoasi rakentavien ihmisten välillä.",
+        "p2": "Mukaudumme siihen, miten sinä haluat toimia. Osa asiakkaista haluaa viikoittaisia päivityksiä, toiset haluavat vain nähdä lopputuloksen — kummassakin tapauksessa pysymme joustavina ja helposti tavoitettavissa koko projektin ajan.",
+        "p3": "Meille tärkeää on siisti, nopea ja huolella rakennettu jälki — sekä avoimuus hinnasta ja aikataulusta jo ensimmäisestä keskustelusta lähtien, jotta matkan varrella ei tule yllätyksiä."
+      },
+      "founders": {
+        "max": {
+          "name": "Max Schroderus",
+          "role": "Perustaja & web-kehittäjä",
+          "descriptor": "Keskittyy visuaaliseen suunnitteluun ja käyttöliittymiin, jotka tuntuvat yhtä hyvältä kuin miltä ne näyttävät."
+        },
+        "valtteri": {
+          "name": "Valtteri Melin",
+          "role": "Perustaja & web-kehittäjä",
+          "descriptor": "Keskittyy siistiin koodiin ja projektien viemiseen maaliin alusta loppuun huolella."
+        }
+      },
+      "services": {
+        "items": [
+          {
+            "name": "Verkkosivujen suunnittelu",
+            "descriptor": "Omaleimaista, brändin mukaista suunnittelua jokaiselle asiakkaalle."
+          },
+          {
+            "name": "Verkkosivujen kehitys",
+            "descriptor": "Nopeita, siistejä ja käsin rakennettuja sivustoja, jotka vain toimivat."
+          },
+          {
+            "name": "Verkkokaupat (Shopify)",
+            "descriptor": "Shopify-verkkokaupat, jotka on rakennettu myymään."
+          },
+          {
+            "name": "Responsiivinen suunnittelu",
+            "descriptor": "Toimii moitteettomasti jokaisella näytöllä, puhelimesta pöytäkoneeseen."
+          },
+          {
+            "name": "Suorituskyky & tuki",
+            "descriptor": "Nopeasti latautuvia sivustoja ja jatkuvaa huolenpitoa julkaisun jälkeen."
+          }
+        ]
+      },
+      "process": {
+        "heading": "Näin projekti etenee",
+        "intro": "Neljä vaihetta alusta loppuun — selkeästi, läheltä ja ilman yllätyksiä.",
+        "steps": [
+          {
+            "title": "Keskustelu",
+            "desc": "Aloitamme keskustelulla — tavoitteesi, asiakkaasi ja se, mitä sivuston oikeasti pitää tehdä. Ei lomakkeita, ei asiakkuuspäälliköitä, vaan suora keskustelu niiden kanssa, jotka sivuston rakentavat."
+          },
+          {
+            "title": "Suunnittelu",
+            "desc": "Muotoilemme suunnan — taiton, typografian ja visuaalisen ilmeen — ja näytämme sen ajoissa, jotta voit reagoida ennen kuin ainuttakaan riviä koodia on kirjoitettu."
+          },
+          {
+            "title": "Toteutus",
+            "desc": "Rakennamme sivuston käsin — nopeasti, responsiivisesti ja huolella viimeistellen — pitäen sinut mukana juuri sinulle sopivaan tahtiin."
+          },
+          {
+            "title": "Julkaisu",
+            "desc": "Julkaisemme, testaamme kaiken oikeilla laitteilla ja luovutamme sivuston, joka on aidosti sinun hallittavissasi — emmekä katoa julkaisun jälkeen."
+          }
+        ]
+      },
+      "values": {
+        "heading": "Mihin uskomme",
+        "intro": "Periaatteet jokaisen projektin taustalla.",
+        "items": [
+          {
+            "title": "Taattu laatu",
+            "desc": "Jokainen julkaisemamme sivusto on viimeistelty, ammattimainen ja tehty tasolla, jonka allekirjoitamme ylpeinä — ei oikaisuja, ei 'riittävän hyvää'."
+          },
+          {
+            "title": "Asiakas edellä",
+            "desc": "Tavoitteesi ohjaavat jokaista päätöstä. Työskentelemme läheltä ja suoraan, emmekä lopeta ennen kuin olet aidosti tyytyväinen lopputulokseen."
+          },
+          {
+            "title": "Nopea toimitus",
+            "desc": "Etenemme nopeasti tinkimättä laadusta — toimiva, huolella rakennettu sivusto käsissäsi pian, ei kuukausien odottelua."
+          },
+          {
+            "title": "Joustava hinnoittelu",
+            "desc": "Hinnoittelu, joka muotoillaan projektisi ja budjettisi mukaan ja sovitaan avoimesti etukäteen — tiedät aina missä mennään."
+          }
+        ]
+      },
+      "cta": {
+        "heading": "Rakennetaan jotain, jota kannattaa esitellä.",
+        "text": "Kerro projektistasi — hoidamme lopun.",
+        "button": "Aloitetaan projekti",
+        "emailLabel": "Tai laita sähköpostia:"
+      }
+    },
+    "contact": {
+      "eyebrow": "Ota yhteyttä",
+      "title": "Yhteystiedot",
+      "body": "Yhteystietosivun sisältö tulossa pian."
+    }
+  }
+}

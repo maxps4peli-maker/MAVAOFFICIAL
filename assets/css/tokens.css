@@ -1,0 +1,26 @@
+:root {
+  --color-bg: #0C0C0E;
+  --color-surface: #151517;
+  --color-surface-raised: #1B1B1E;
+  --color-text: #F4F2ED;
+  --color-text-muted: #8B8B8F;
+  --color-accent: #003580;
+  --color-accent-light: #3B7DDD;
+  --color-border: #232326;
+
+  --font-display: 'Clash Display', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'General Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  --nav-height: 84px;
+  --container-max: 1400px;
+  --container-pad: clamp(20px, 5vw, 64px);
+  /* shared by the nav's left content edge and the home hero wordmark, so
+     they always line up on one clean left margin */
+  --nav-left-inset: 6px;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}

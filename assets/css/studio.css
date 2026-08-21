@@ -1,0 +1,645 @@
+/* Studio page — sections built: opening statement, approach, founders,
+   services, process, values, cta. Studio page complete. */
+
+/* Shared left inset for all four Studio sections (01-04) — same
+   clamp(1.5rem, 6vw, 7rem) value repeated on .studio-approach,
+   .studio-founders, .services-scroll__label and .services-scroll__track
+   below (plus a 1.5rem override for all five under 768px) — keep them in
+   sync if this ever changes. Only padding-left; every other value on these
+   rules (top/bottom padding, .container's own right padding) is untouched. */
+.studio-opening {
+  padding-top: calc(var(--nav-height) + 72px);
+  padding-bottom: 56px;
+  padding-left: clamp(1.5rem, 6vw, 7rem);
+}
+
+.studio-statement {
+  margin-top: 24px;
+  max-width: 900px;
+  font-size: clamp(2.25rem, 1.5rem + 3vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.studio-approach {
+  padding: 56px 0;
+  padding-left: clamp(1.5rem, 6vw, 7rem);
+}
+
+.studio-approach__body {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 56ch;
+}
+
+.studio-approach__body p {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.studio-founders {
+  padding: 56px 0 96px;
+  padding-left: clamp(1.5rem, 6vw, 7rem);
+}
+
+.founders-grid {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+.founder-card__portrait {
+  aspect-ratio: 4 / 5;
+  margin-bottom: 20px;
+}
+
+.founder-card__portrait span {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.founder-card__name {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.founder-card__role {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent-light);
+  margin-bottom: 14px;
+}
+
+.founder-card__descriptor {
+  font-size: 15px;
+  max-width: 36ch;
+}
+
+@media (min-width: 700px) {
+  .founders-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  /* Uncapped, the 4:5 ratio scaled with the grid column's own width (up to
+     ~600px+ on wide desktops), producing a portrait taller than the
+     viewport. Capping height and letting the ratio drive width back down
+     (browsers re-derive width from a clamped height) keeps both founders
+     comfortably in view; centered since the box is now narrower than its
+     grid column. */
+  .founder-card__portrait {
+    max-height: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/*
+ * ---------- Services (horizontal scroll) ----------
+ * New, self-contained section appended after Founders. Every selector below
+ * is scoped under .services-scroll / .service-card, so nothing above this
+ * comment is touched by it.
+ *
+ * Fallback-first: the un-gated rules here are a plain vertical stack (full
+ * width, normal document flow) — that IS the mobile / reduced-motion / no-JS
+ * fallback, no separate fallback styling needed. assets/js/services-scroll.js
+ * adds .services-scroll--active only once it has confirmed desktop width +
+ * motion allowed + GSAP/ScrollTrigger loaded (same gating hero.js already
+ * uses for .hero--pinned); only the media query below reads that class, and
+ * only to switch the same track from a column to a pinned, horizontally
+ * scrolling row.
+ */
+.services-scroll {
+  position: relative;
+  padding: 56px 0 96px;
+}
+
+/* Overrides .container's own padding-left/right (same specificity, but this
+   rule loads later): padding-right:0 matches the other section labels above,
+   which each cancel .container's right padding the same way via their own
+   section-level `padding: N 0 M` shorthand. padding-left carries the shared
+   Studio left-inset value instead of .container's --container-pad. */
+.services-scroll__label {
+  margin-bottom: 32px;
+  padding-left: clamp(1.5rem, 6vw, 7rem);
+  padding-right: 0;
+}
+
+/* Left side carries the shared Studio left-inset so the mobile/fallback card
+   stack lines up under the "04 / Services" label instead of drifting to
+   --container-pad; right side (--container-pad) is untouched. Unlike the
+   label (which sits inside .container and gets its margin:0 auto centering
+   for free above 1400px-wide viewports), this track is full-bleed with no
+   centering margin of its own — so above 1400px its padding-left has to add
+   that same margin back in by hand (max(0px, (100vw - container-max) / 2),
+   the identical formula home.css already uses for its own full-bleed panel)
+   or the cards drift away from the label as the viewport grows past 1400px. */
+.services-scroll__track {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 var(--container-pad) 0 calc(max(0px, (100vw - var(--container-max)) / 2) + clamp(1.5rem, 6vw, 7rem));
+}
+
+/* .services-scroll__item (not .service-card) carries data-reveal, so
+   reveal.js's fade-in tween owns *its* transform — leaving .service-card's
+   transform free for :hover below. GSAP leaves an inline transform on
+   whatever it animates even after the tween finishes, which would silently
+   out-rank a :hover rule on the same element (inline always beats a
+   stylesheet, regardless of specificity), so the two need to be separate
+   elements rather than one fighting itself. */
+.service-card {
+  width: 100%;
+  height: 100%;
+  padding: 28px 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  transition: transform 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent-light);
+}
+
+.service-card__index {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--color-accent-light);
+  margin-bottom: 20px;
+  font-variant-numeric: tabular-nums;
+}
+
+.service-card__name {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.service-card__descriptor {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  max-width: 40ch;
+}
+
+/* Hidden until .services-scroll--active gives it something to represent —
+   in the vertical-stack fallback there's no horizontal track to show
+   progress through. */
+.services-scroll__progress {
+  display: none;
+}
+
+.services-scroll__progress-fill {
+  height: 100%;
+  width: 100%;
+  background: var(--color-accent-light);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+@media (min-width: 861px) {
+  /*
+   * .services-scroll--active fills exactly one viewport height and stacks
+   * label / track-viewport / progress as flex children so the track can
+   * take "whatever's left" (flex:1) and clip to it (min-height:0 is the
+   * standard fix for a flex child otherwise refusing to shrink below its
+   * content's intrinsic size, which would break the overflow:hidden clip
+   * services-scroll.js's horizontal translate depends on).
+   */
+  .services-scroll--active {
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .services-scroll--active .services-scroll__label {
+    /* .container's margin:0 auto is a cross-axis auto-margin on a column
+       flex item, which flexbox honors by shrinking the item to fit its
+       content instead of the usual align-items:stretch fill — width:100%
+       gives it a definite cross-axis size so max-width/margin:auto center
+       it exactly as they would outside a flex context. */
+    width: 100%;
+    flex: 0 0 auto;
+    margin-bottom: 0;
+    padding-top: calc(var(--nav-height) + 40px);
+    padding-bottom: 24px;
+  }
+
+  .services-scroll--active .services-scroll__viewport {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .services-scroll--active .services-scroll__track {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 32px;
+    width: max-content;
+    /* Same centering-margin-replication as the fallback track rule above
+       (this is the row/pinned-mode version of the same element). */
+    padding: 0 0 0 calc(max(0px, (100vw - var(--container-max)) / 2) + clamp(1.5rem, 6vw, 7rem));
+  }
+
+  /* Sizing lives on the wrapper (the actual flex child of the track); the
+     card inside just fills it (width/height:100% above) and arranges its
+     own content. */
+  .services-scroll--active .services-scroll__item {
+    flex: 0 0 360px;
+    height: min(56vh, 520px);
+  }
+
+  .services-scroll--active .service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .services-scroll--active .services-scroll__progress {
+    display: block;
+    flex: 0 0 auto;
+    height: 3px;
+    margin: 0 var(--container-pad) 40px;
+    border-radius: 2px;
+    background: var(--color-border);
+    overflow: hidden;
+  }
+}
+
+/*
+ * ---------- Process ----------
+ * New, self-contained section appended after Founders. Every selector below
+ * is scoped under .studio-process / .process-step, so nothing above this
+ * comment is touched by it. No JS of its own: reveal is entirely the
+ * existing data-reveal utility (reveal.js, unmodified) and the two-column
+ * layout is entirely position:sticky, native CSS with no scroll listener.
+ *
+ * Fallback-first, same as every other section on this page: the un-gated
+ * rules here are a plain single-column stack (.studio-process__intro-inner
+ * still position:sticky, but with nothing beside it to scroll past, it
+ * just sits in normal flow) — that already IS the mobile / reduced-motion /
+ * no-JS fallback. The min-width:900px query below adds the two-column grid
+ * and gives the sticky wrapper something tall beside it to stick through.
+ */
+.studio-process {
+  padding: 56px 0 96px;
+  padding-left: clamp(1.5rem, 6vw, 7rem);
+}
+
+.studio-process__intro-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 44ch;
+}
+
+.studio-process__heading {
+  font-size: clamp(1.75rem, 1.3rem + 2vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.studio-process__lead {
+  font-size: 16px;
+  color: var(--color-text-muted);
+}
+
+.studio-process__steps {
+  margin-top: 40px;
+}
+
+.process-step {
+  padding: 32px 0;
+}
+
+.process-step:first-child {
+  padding-top: 0;
+}
+
+.process-step:last-child {
+  padding-bottom: 0;
+}
+
+/* Divider sits only between steps (not above the first or below the last) —
+   reuses --color-border, the same subtle token every other hairline/card
+   border on the site already uses. */
+.process-step + .process-step {
+  border-top: 1px solid var(--color-border);
+}
+
+.process-step__index {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--color-accent-light);
+  margin-bottom: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+.process-step__title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.process-step__desc {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  max-width: 52ch;
+}
+
+@media (min-width: 900px) {
+  /*
+   * .studio-process__intro is the grid cell — left un-gated so it keeps the
+   * grid row's default align-items:stretch, matching the (taller)
+   * .studio-process__steps cell's height. .studio-process__intro-inner is a
+   * separate, content-sized element nested inside it that actually carries
+   * position:sticky: sticky needs a containing block taller than itself to
+   * have anywhere to stick *through*, which is exactly what the stretched
+   * outer cell provides — sticking position:sticky directly on the
+   * (stretched-tall) cell itself would make the whole tall box stick as one
+   * unit instead of letting the short intro content stick while the row
+   * remains tall.
+   */
+  .studio-process__inner {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 64px;
+  }
+
+  .studio-process__intro-inner {
+    position: sticky;
+    top: calc(var(--nav-height) + 40px);
+  }
+
+  .studio-process__steps {
+    margin-top: 0;
+  }
+
+  .process-step {
+    padding: 56px 0;
+  }
+
+  .process-step__index {
+    font-size: 48px;
+  }
+}
+
+/*
+ * ---------- Values ----------
+ * New, self-contained section appended after Process. Every selector below
+ * is scoped under .studio-values / .value-card, so nothing above this
+ * comment is touched by it. No JS of its own: reveal is entirely the
+ * existing data-reveal utility (reveal.js, unmodified).
+ *
+ * Hover here is border-color + background only, no transform — so unlike
+ * the Services cards, data-reveal can sit directly on .value-card itself:
+ * there's no transform for reveal.js's own fade-in tween to collide with
+ * (that collision only happens when BOTH reveal.js and a :hover rule want
+ * to drive the same element's transform), so no separate wrapper element
+ * is needed the way .services-scroll__item wraps .service-card.
+ *
+ * Fallback-first, same as every other section: the un-gated rules here are
+ * already the mobile / reduced-motion / no-JS fallback (single column, plain
+ * static grid). The min-width:768px query below is purely a column-count
+ * change, nothing structural.
+ */
+.studio-values {
+  padding: 56px 0 96px;
+  padding-left: clamp(1.5rem, 6vw, 7rem);
+}
+
+.studio-values__heading {
+  margin-top: 8px;
+  font-size: clamp(1.75rem, 1.3rem + 2vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.studio-values__lead {
+  margin-top: 16px;
+  font-size: 16px;
+  color: var(--color-text-muted);
+  max-width: 42ch;
+}
+
+.values-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+/* border stays 1px solid but transparent (not removed outright) so the
+   border-box footprint is pixel-identical to before — the SVG frame below
+   is now the card's only visible outline. position:relative anchors the
+   frame's position:absolute; no hover rule anymore (see .value-card__frame
+   further down for why: a second hovered border would double up against
+   the drawn line this turn adds in its place). */
+.value-card {
+  position: relative;
+  padding: 40px 32px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.value-card__index {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-accent-light);
+  margin-bottom: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+.value-card__title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.value-card__desc {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  max-width: 42ch;
+}
+
+@media (min-width: 768px) {
+  /* padding-inline only here (not the base/mobile rule above): grid was
+     previously flush with .studio-values's own left inset and .container's
+     right edge (verified — 0 padding of its own either side) — this insets
+     both columns symmetrically off the section edges without touching the
+     header, which stays at the section's existing inset on purpose, or the
+     inter-card gap, which is a separate property untouched below. */
+  .values-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding-inline: clamp(1.5rem, 4vw, 4rem);
+  }
+}
+
+/*
+ * ---------- Values: drawn frame ----------
+ * Adds an animated SVG outline to the existing .value-card cells above —
+ * their copy, grid and data-reveal fade/rise are untouched. Text renders
+ * above the frame purely by DOM order (the svg is each card's first child;
+ * plain siblings paint in source order within the same stacking context) —
+ * not z-index, which would need position:relative added to three more
+ * elements to have any effect and isn't needed here.
+ *
+ * Gating mirrors the reveal utility's own pattern in base.css (.js-reveal
+ * scopes the hidden "before" state) even though this uses its own small
+ * script, assets/js/values-frame.js, rather than reveal.js: reveal.js's
+ * revealItems()/revealGroups() only ever set inline opacity/transform via
+ * GSAP on a plain data-reveal element, no class — see the file itself for
+ * the check — so there was no existing hook to key off. The base rule
+ * below (fully drawn, no transition) is what's in effect whenever js-reveal
+ * is absent — no JS, a blocked script, or prefers-reduced-motion — so the
+ * frame is never blank; only .js-reveal adds the hidden starting state and
+ * the transition that draws it on enter.
+ */
+.value-card__frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.value-card__frame rect {
+  fill: none;
+  stroke: var(--color-accent-light);
+  stroke-width: 1.25px;
+  rx: var(--radius-sm);
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+}
+
+.js-reveal .value-card__frame rect {
+  stroke-dashoffset: 100;
+  transition: stroke-dashoffset 0.9s var(--ease-out);
+}
+
+.js-reveal .value-card:nth-child(1) .value-card__frame rect {
+  transition-delay: 0s;
+}
+
+.js-reveal .value-card:nth-child(2) .value-card__frame rect {
+  transition-delay: 0.1s;
+}
+
+.js-reveal .value-card:nth-child(3) .value-card__frame rect {
+  transition-delay: 0.2s;
+}
+
+.js-reveal .value-card:nth-child(4) .value-card__frame rect {
+  transition-delay: 0.3s;
+}
+
+.js-reveal .value-card.is-drawn .value-card__frame rect {
+  stroke-dashoffset: 0;
+}
+
+/*
+ * ---------- CTA (closing) ----------
+ * New, final section appended after Values. Every selector below is scoped
+ * under .studio-cta, so nothing above this comment is touched by it. No JS
+ * of its own: reveal is entirely the existing data-reveal utility
+ * (reveal.js, unmodified).
+ *
+ * .btn (base.css) is reused as-is for the primary button — not touched,
+ * not overridden. Its own :hover{transform:translateY(-2px)} stays
+ * functional because data-reveal sits on .studio-cta__button-wrap (a plain
+ * wrapper div) rather than the <a class="btn"> itself: the same wrapper
+ * pattern .services-scroll__item already uses around .service-card, for the
+ * same reason — GSAP leaves an inline transform on whatever element
+ * data-reveal animates, which would silently out-rank .btn's own hover
+ * transform if they were one and the same element. The email link's hover
+ * (text-decoration only) has no such conflict, so it carries data-reveal
+ * directly.
+ *
+ * Deliberately more generous padding than the standard 56/96 every other
+ * section uses, so this reads as a distinct closing moment rather than
+ * "just another section."
+ */
+.studio-cta {
+  padding: 96px 0 140px;
+  padding-left: clamp(1.5rem, 6vw, 7rem);
+}
+
+.studio-cta__heading {
+  margin-top: 16px;
+  max-width: 16ch;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.studio-cta__text {
+  margin-top: 20px;
+  max-width: 48ch;
+  font-size: 17px;
+  color: var(--color-text-muted);
+}
+
+.studio-cta__actions {
+  margin-top: 40px;
+}
+
+.studio-cta__email {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.studio-cta__email a {
+  color: var(--color-accent-light);
+  transition: opacity 0.3s var(--ease-out);
+}
+
+.studio-cta__email a:hover {
+  text-decoration: underline;
+}
+
+/* Shared Studio left-inset override for narrow/mobile widths — the desktop
+   clamp(1.5rem, 6vw, 7rem) above would otherwise grow to ~2.9rem by 768px,
+   past the "sensible smaller inset" this task asked for on mobile.
+   .studio-process / .studio-values / .studio-cta join the same shared list
+   so their left columns keep matching the others below 768px too, exactly
+   like above it.
+   .services-scroll--active .services-scroll__track is intentionally not
+   listed here: that rule only ever applies at min-width:861px, well above
+   this 768px boundary, so it can never be in effect at the same time as
+   this override. */
+@media (max-width: 768px) {
+  .studio-opening,
+  .studio-approach,
+  .studio-founders,
+  .studio-process,
+  .studio-values,
+  .studio-cta,
+  .services-scroll__label,
+  .services-scroll__track {
+    padding-left: 1.5rem;
+  }
+}

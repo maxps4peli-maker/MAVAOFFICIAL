@@ -1,0 +1,30 @@
+<header class="site-nav" id="site-nav">
+  <div class="site-nav__inner">
+    <div class="site-nav__left">
+      <a href="index.html" class="site-nav__logo" aria-label="MAVA — Home">
+        <!-- TODO: swap for <img src="assets/img/logo.svg" alt="MAVA"> once the logo file is added -->
+        MAVA
+      </a>
+
+      <nav class="site-nav__links" aria-label="Primary">
+        <a href="work.html" data-i18n="nav.work">Work</a>
+        <a href="studio.html" data-i18n="nav.studio">Studio</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="site-nav__meta">
+      <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">
+        <span data-lang="en" class="is-active">EN</span><span>/</span><span data-lang="fi">FI</span>
+      </button>
+      <div class="hel-time" aria-label="Current time in Helsinki">
+        <span class="hel-time__label">HEL</span>
+        <span class="hel-time__clock" id="hel-time-clock">--:--</span>
+      </div>
+    </div>
+
+    <button class="site-nav__burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

@@ -1,0 +1,158 @@
+{
+  "nav": {
+    "home": "Home",
+    "work": "Work",
+    "studio": "Studio",
+    "contact": "Contact"
+  },
+  "footer": {
+    "tagline": "Web design studio, Helsinki.",
+    "marquee": "Let's build something —",
+    "contactHeading": "Contact",
+    "followHeading": "Follow",
+    "navHeading": "Menu",
+    "location": "Helsinki, Finland",
+    "email": "mavastudiosinfo@gmail.com",
+    "phone": "+358 44 263 1350"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Web Design Studio — Helsinki",
+      "intro": "An independent Helsinki web design studio. We design and build websites and online stores — focused on quality, fast delivery and flexible pricing.",
+      "viewWork": "View Work",
+      "comingSoon": "Coming soon",
+      "projects": [
+        {
+          "tag": "Jensai Skin & Wellness",
+          "name": "Jensai Skin & Wellness",
+          "descriptor": "Website design & development for a premium skincare & beauty salon in Espoo."
+        },
+        {
+          "tag": "Coming soon",
+          "name": "Coming soon",
+          "descriptor": "A new MAVA project is currently in development."
+        },
+        {
+          "tag": "Coming soon",
+          "name": "Coming soon",
+          "descriptor": "A new MAVA project is currently in development."
+        }
+      ]
+    }
+  },
+  "pages": {
+    "work": {
+      "eyebrow": "Selected work",
+      "title": "Work",
+      "body": "Project index is coming soon."
+    },
+    "studio": {
+      "labels": {
+        "opening": "01 / Studio",
+        "approach": "02 / Approach",
+        "founders": "04 / Founders",
+        "services": "03 / Services",
+        "process": "05 — Process",
+        "values": "06 — Values",
+        "cta": "07 — Get in touch"
+      },
+      "statement": "We are MAVA. An independent web design studio from Helsinki, building websites and online stores that stand out.",
+      "approach": {
+        "p1": "MAVA is small by design. Every project is handled directly by the two of us — no account managers, no hand-offs, no layers between you and the people actually building your site.",
+        "p2": "We adapt to how you like to work. Some clients want weekly check-ins, others want to leave us alone and see the result — either way, we stay flexible and easy to reach throughout the project.",
+        "p3": "We care about clean, fast, well-built websites — and about being upfront on price and timeline from the first conversation, so there are no surprises along the way."
+      },
+      "founders": {
+        "max": {
+          "name": "Max Schroderus",
+          "role": "Co-Founder & Web Developer",
+          "descriptor": "Focused on visual design and interfaces that feel as good as they look."
+        },
+        "valtteri": {
+          "name": "Valtteri Melin",
+          "role": "Co-Founder & Web Developer",
+          "descriptor": "Focused on clean code and getting projects built right, start to finish."
+        }
+      },
+      "services": {
+        "items": [
+          {
+            "name": "Website Design",
+            "descriptor": "Distinctive, on-brand design tailored to each client."
+          },
+          {
+            "name": "Website Development",
+            "descriptor": "Fast, clean, hand-built sites that just work."
+          },
+          {
+            "name": "Online Stores (Shopify)",
+            "descriptor": "Shopify storefronts built to sell."
+          },
+          {
+            "name": "Responsive Design",
+            "descriptor": "Flawless on every screen, from phone to desktop."
+          },
+          {
+            "name": "Performance & Support",
+            "descriptor": "Quick-loading sites and ongoing care after launch."
+          }
+        ]
+      },
+      "process": {
+        "heading": "How a project runs",
+        "intro": "Four steps, start to finish — clear, close, and without surprises.",
+        "steps": [
+          {
+            "title": "Discovery",
+            "desc": "We start with a conversation — your goals, your customers, and what the site actually needs to do. No forms, no account managers; a direct talk with the people building it."
+          },
+          {
+            "title": "Design",
+            "desc": "We shape the direction — layout, typography and visual identity — and share it early, so you can react before a single line of code is written."
+          },
+          {
+            "title": "Build",
+            "desc": "We build the site by hand — fast, responsive and carefully finished — keeping you in the loop at whatever pace suits you."
+          },
+          {
+            "title": "Launch",
+            "desc": "We launch, test everything on real devices, and hand over a site that's genuinely yours to run — and we're still here after go-live."
+          }
+        ]
+      },
+      "values": {
+        "heading": "What we stand for",
+        "intro": "The principles behind every project we take on.",
+        "items": [
+          {
+            "title": "Guaranteed quality",
+            "desc": "Every site we ship is polished, professional and built to a standard we'd proudly put our name on — no cut corners, no 'good enough'."
+          },
+          {
+            "title": "Client first",
+            "desc": "Your goals lead every decision. We work closely and directly, and we're not done until you're genuinely happy with the result."
+          },
+          {
+            "title": "Fast delivery",
+            "desc": "We move quickly without cutting quality — a working, well-built site in your hands sooner, not months of waiting."
+          },
+          {
+            "title": "Flexible pricing",
+            "desc": "Pricing shaped around your project and budget, agreed openly up front — so you always know where you stand."
+          }
+        ]
+      },
+      "cta": {
+        "heading": "Let's build something worth showing off.",
+        "text": "Tell us about your project — we'll take it from there.",
+        "button": "Start a project",
+        "emailLabel": "Or email us:"
+      }
+    },
+    "contact": {
+      "eyebrow": "Get in touch",
+      "title": "Contact",
+      "body": "Contact page content is coming soon."
+    }
+  }
+}

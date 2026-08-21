@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio — MAVA</title>
+  <meta name="description" content="About MAVA, a Helsinki-based web design studio founded by Max Schroderus and Valtteri Melin.">
+  <link rel="icon" href="data:,">
+
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/studio.css">
+</head>
+<body>
+  <div data-include="partials/nav.html"></div>
+
+  <main>
+    <section class="studio-opening container">
+      <span class="eyebrow" data-reveal data-i18n="pages.studio.labels.opening">01 / Studio</span>
+      <h1 class="studio-statement" data-reveal="lines" data-i18n="pages.studio.statement">We are MAVA. An independent web design studio from Helsinki, building websites and online stores that stand out.</h1>
+    </section>
+
+    <section class="studio-approach container">
+      <span class="eyebrow" data-reveal data-i18n="pages.studio.labels.approach">02 / Approach</span>
+      <div class="studio-approach__body">
+        <p data-reveal data-i18n="pages.studio.approach.p1">MAVA is small by design. Every project is handled directly by the two of us — no account managers, no hand-offs, no layers between you and the people actually building your site.</p>
+        <p data-reveal data-i18n="pages.studio.approach.p2">We adapt to how you like to work. Some clients want weekly check-ins, others want to leave us alone and see the result — either way, we stay flexible and easy to reach throughout the project.</p>
+        <p data-reveal data-i18n="pages.studio.approach.p3">We care about clean, fast, well-built websites — and about being upfront on price and timeline from the first conversation, so there are no surprises along the way.</p>
+      </div>
+    </section>
+
+    <section class="services-scroll" data-services-scroll>
+      <div class="services-scroll__label container">
+        <span class="eyebrow" data-reveal data-i18n="pages.studio.labels.services">03 / Services</span>
+      </div>
+
+      <div class="services-scroll__viewport">
+        <div class="services-scroll__track" data-reveal-group>
+          <div class="services-scroll__item" data-reveal>
+            <article class="service-card">
+              <span class="service-card__index" aria-hidden="true">01</span>
+              <h3 class="service-card__name" data-i18n="pages.studio.services.items.0.name">Website Design</h3>
+              <p class="service-card__descriptor" data-i18n="pages.studio.services.items.0.descriptor">Distinctive, on-brand design tailored to each client.</p>
+            </article>
+          </div>
+
+          <div class="services-scroll__item" data-reveal>
+            <article class="service-card">
+              <span class="service-card__index" aria-hidden="true">02</span>
+              <h3 class="service-card__name" data-i18n="pages.studio.services.items.1.name">Website Development</h3>
+              <p class="service-card__descriptor" data-i18n="pages.studio.services.items.1.descriptor">Fast, clean, hand-built sites that just work.</p>
+            </article>
+          </div>
+
+          <div class="services-scroll__item" data-reveal>
+            <article class="service-card">
+              <span class="service-card__index" aria-hidden="true">03</span>
+              <h3 class="service-card__name" data-i18n="pages.studio.services.items.2.name">Online Stores (Shopify)</h3>
+              <p class="service-card__descriptor" data-i18n="pages.studio.services.items.2.descriptor">Shopify storefronts built to sell.</p>
+            </article>
+          </div>
+
+          <div class="services-scroll__item" data-reveal>
+            <article class="service-card">
+              <span class="service-card__index" aria-hidden="true">04</span>
+              <h3 class="service-card__name" data-i18n="pages.studio.services.items.3.name">Responsive Design</h3>
+              <p class="service-card__descriptor" data-i18n="pages.studio.services.items.3.descriptor">Flawless on every screen, from phone to desktop.</p>
+            </article>
+          </div>
+
+          <div class="services-scroll__item" data-reveal>
+            <article class="service-card">
+              <span class="service-card__index" aria-hidden="true">05</span>
+              <h3 class="service-card__name" data-i18n="pages.studio.services.items.4.name">Performance &amp; Support</h3>
+              <p class="service-card__descriptor" data-i18n="pages.studio.services.items.4.descriptor">Quick-loading sites and ongoing care after launch.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="services-scroll__progress" aria-hidden="true">
+        <div class="services-scroll__progress-fill"></div>
+      </div>
+    </section>
+
+    <section class="studio-founders container">
+      <span class="eyebrow" data-reveal data-i18n="pages.studio.labels.founders">04 / Founders</span>
+      <div class="founders-grid" data-reveal-group>
+        <article class="founder-card" data-reveal>
+          <div class="founder-card__portrait placeholder-block">
+            <!-- TODO: replace with <img src="assets/img/founders/max.jpg" alt="Max Schroderus"> once a real portrait is ready -->
+            <span>MS</span>
+          </div>
+          <h3 class="founder-card__name" data-i18n="pages.studio.founders.max.name">Max Schroderus</h3>
+          <p class="founder-card__role" data-i18n="pages.studio.founders.max.role">Co-Founder & Web Developer</p>
+          <p class="founder-card__descriptor" data-i18n="pages.studio.founders.max.descriptor">Focused on visual design and interfaces that feel as good as they look.</p>
+        </article>
+
+        <article class="founder-card" data-reveal>
+          <div class="founder-card__portrait placeholder-block">
+            <!-- TODO: replace with <img src="assets/img/founders/valtteri.jpg" alt="Valtteri Melin"> once a real portrait is ready -->
+            <span>VM</span>
+          </div>
+          <h3 class="founder-card__name" data-i18n="pages.studio.founders.valtteri.name">Valtteri Melin</h3>
+          <p class="founder-card__role" data-i18n="pages.studio.founders.valtteri.role">Co-Founder & Web Developer</p>
+          <p class="founder-card__descriptor" data-i18n="pages.studio.founders.valtteri.descriptor">Focused on clean code and getting projects built right, start to finish.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="studio-process container">
+      <div class="studio-process__inner">
+        <div class="studio-process__intro">
+          <div class="studio-process__intro-inner">
+            <span class="eyebrow" data-reveal data-i18n="pages.studio.labels.process">05 — Process</span>
+            <h2 class="studio-process__heading" data-reveal="lines" data-i18n="pages.studio.process.heading">How a project runs</h2>
+            <p class="studio-process__lead" data-reveal data-i18n="pages.studio.process.intro">Four steps, start to finish — clear, close, and without surprises.</p>
+          </div>
+        </div>
+
+        <div class="studio-process__steps" data-reveal-group>
+          <article class="process-step" data-reveal>
+            <span class="process-step__index" aria-hidden="true">01</span>
+            <h3 class="process-step__title" data-i18n="pages.studio.process.steps.0.title">Discovery</h3>
+            <p class="process-step__desc" data-i18n="pages.studio.process.steps.0.desc">We start with a conversation — your goals, your customers, and what the site actually needs to do. No forms, no account managers; a direct talk with the people building it.</p>
+          </article>
+
+          <article class="process-step" data-reveal>
+            <span class="process-step__index" aria-hidden="true">02</span>
+            <h3 class="process-step__title" data-i18n="pages.studio.process.steps.1.title">Design</h3>
+            <p class="process-step__desc" data-i18n="pages.studio.process.steps.1.desc">We shape the direction — layout, typography and visual identity — and share it early, so you can react before a single line of code is written.</p>
+          </article>
+
+          <article class="process-step" data-reveal>
+            <span class="process-step__index" aria-hidden="true">03</span>
+            <h3 class="process-step__title" data-i18n="pages.studio.process.steps.2.title">Build</h3>
+            <p class="process-step__desc" data-i18n="pages.studio.process.steps.2.desc">We build the site by hand — fast, responsive and carefully finished — keeping you in the loop at whatever pace suits you.</p>
+          </article>
+
+          <article class="process-step" data-reveal>
+            <span class="process-step__index" aria-hidden="true">04</span>
+            <h3 class="process-step__title" data-i18n="pages.studio.process.steps.3.title">Launch</h3>
+            <p class="process-step__desc" data-i18n="pages.studio.process.steps.3.desc">We launch, test everything on real devices, and hand over a site that's genuinely yours to run — and we're still here after go-live.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="studio-values container">
+      <div class="studio-values__header">
+        <span class="eyebrow" data-reveal data-i18n="pages.studio.labels.values">06 — Values</span>
+        <h2 class="studio-values__heading" data-reveal="lines" data-i18n="pages.studio.values.heading">What we stand for</h2>
+        <p class="studio-values__lead" data-reveal data-i18n="pages.studio.values.intro">The principles behind every project we take on.</p>
+      </div>
+
+      <div class="values-grid" data-reveal-group>
+        <article class="value-card" data-reveal>
+          <svg class="value-card__frame" aria-hidden="true">
+            <rect x="0" y="0" width="100%" height="100%" pathLength="100" vector-effect="non-scaling-stroke" />
+          </svg>
+          <span class="value-card__index" aria-hidden="true">01</span>
+          <h3 class="value-card__title" data-i18n="pages.studio.values.items.0.title">Guaranteed quality</h3>
+          <p class="value-card__desc" data-i18n="pages.studio.values.items.0.desc">Every site we ship is polished, professional and built to a standard we'd proudly put our name on — no cut corners, no 'good enough'.</p>
+        </article>
+
+        <article class="value-card" data-reveal>
+          <svg class="value-card__frame" aria-hidden="true">
+            <rect x="0" y="0" width="100%" height="100%" pathLength="100" vector-effect="non-scaling-stroke" />
+          </svg>
+          <span class="value-card__index" aria-hidden="true">02</span>
+          <h3 class="value-card__title" data-i18n="pages.studio.values.items.1.title">Client first</h3>
+          <p class="value-card__desc" data-i18n="pages.studio.values.items.1.desc">Your goals lead every decision. We work closely and directly, and we're not done until you're genuinely happy with the result.</p>
+        </article>
+
+        <article class="value-card" data-reveal>
+          <svg class="value-card__frame" aria-hidden="true">
+            <rect x="0" y="0" width="100%" height="100%" pathLength="100" vector-effect="non-scaling-stroke" />
+          </svg>
+          <span class="value-card__index" aria-hidden="true">03</span>
+          <h3 class="value-card__title" data-i18n="pages.studio.values.items.2.title">Fast delivery</h3>
+          <p class="value-card__desc" data-i18n="pages.studio.values.items.2.desc">We move quickly without cutting quality — a working, well-built site in your hands sooner, not months of waiting.</p>
+        </article>
+
+        <article class="value-card" data-reveal>
+          <svg class="value-card__frame" aria-hidden="true">
+            <rect x="0" y="0" width="100%" height="100%" pathLength="100" vector-effect="non-scaling-stroke" />
+          </svg>
+          <span class="value-card__index" aria-hidden="true">04</span>
+          <h3 class="value-card__title" data-i18n="pages.studio.values.items.3.title">Flexible pricing</h3>
+          <p class="value-card__desc" data-i18n="pages.studio.values.items.3.desc">Pricing shaped around your project and budget, agreed openly up front — so you always know where you stand.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="studio-cta container">
+      <span class="eyebrow" data-reveal data-i18n="pages.studio.labels.cta">07 — Get in touch</span>
+      <h2 class="studio-cta__heading" data-reveal="lines" data-i18n="pages.studio.cta.heading">Let's build something worth showing off.</h2>
+      <p class="studio-cta__text" data-reveal data-i18n="pages.studio.cta.text">Tell us about your project — we'll take it from there.</p>
+
+      <div class="studio-cta__actions" data-reveal-group>
+        <div class="studio-cta__button-wrap" data-reveal>
+          <a class="btn" href="contact.html" data-i18n="pages.studio.cta.button">Start a project</a>
+        </div>
+        <p class="studio-cta__email" data-reveal>
+          <span data-i18n="pages.studio.cta.emailLabel">Or email us:</span>
+          <a href="mailto:mavastudiosinfo@gmail.com">mavastudiosinfo@gmail.com</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Studio page complete -->
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+
+  <script src="assets/js/include-partials.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/time-widget.js"></script>
+  <script src="assets/js/lang-toggle.js"></script>
+  <script src="assets/js/lenis-init.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/reveal.js"></script>
+  <script src="assets/js/services-scroll.js"></script>
+  <script src="assets/js/values-frame.js"></script>
+</body>
+</html>
